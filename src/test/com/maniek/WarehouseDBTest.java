@@ -37,6 +37,14 @@ public class WarehouseDBTest {
     }
 
     @Test
+    public void getProductByCodeNotExist() throws Exception {
+//        WarehouseDB db = new WarehouseDB(List.of(new Product("apple", "Apple", 5, 2.0)));
+//
+//        assertNotNull(db.getProduct("apple"));
+//        assertNull(db.getProduct("strawbery"));
+    }
+
+    @Test
     public void addNewProduct() throws Exception {
         WarehouseDB db = new WarehouseDB();
 
