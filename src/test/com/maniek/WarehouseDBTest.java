@@ -1,7 +1,6 @@
 package com.maniek;
 
 import com.sun.tools.javac.util.List;
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -71,6 +70,41 @@ public class WarehouseDBTest {
         assertTrue(db.getProduct("apple").getQuantity() == 15);
     }
 
+    @Test
+    public void getProductsTotalCount() throws Exception {
+        WarehouseDB db = new WarehouseDB();
+
+        db.add(new Product("apple", "Apple", 5, 2.0));
+        db.add(new Product("carrot", "Carrot", 7, 1.0));
+
+//        assertTrue(db.getProductsTotalCount() == 12);
+    }
+
+    @Test
+    public void getProductsTotalValue() throws Exception {
+        WarehouseDB db = new WarehouseDB();
+
+        db.add(new Product("apple", "Apple", 5, 2.0));
+        db.add(new Product("carrot", "Carrot", 7, 1.0));
+
+//        assertTrue(db.getProductsTotalValue() == 17);
+    }
+
+    @Test
+    public void removeProduct() throws Exception {
+        WarehouseDB db = new WarehouseDB();
+
+        db.add(new Product("apple", "Apple", 5, 2.0));
+        db.add(new Product("carrot", "Carrot", 7, 1.0));
+
+        assertTrue(db.getProducts().size() == 2);
+
+//        db.remove("carrot");
+
+        assertTrue(db.getProducts().size() == 1);
+
+        assertNull(db.getProduct("carrot"));
+    }
 
 
 
